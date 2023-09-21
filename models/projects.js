@@ -9,24 +9,23 @@ const projectSchema = new mongoose.Schema({
     shortdiscription:{
         type:String,
         required:true,
-        unique:true
     },
     category:{
         type:String,
-        required:true,
+        required:true,  // hardware/software
     },
     theme:{
         type:String,
-        required:true,
+        required:true,   // web , blockchain etc..
     },
     description:{
         type:String,
         required:true,
     },
-    techstack:[{
+    teckstack:{
         type:String,
         required:true,
-    }],
+    },
     projectlink:{
         type:String,
         required:true,
@@ -46,9 +45,9 @@ const projectSchema = new mongoose.Schema({
         type:String,
         required:true,
     },
-    collaborator:[{
+    collaborator:{
         type:String,
-    }],
+    },
     userid:{
         type:mongoose.Schema.Types.ObjectId,
         ref:"user",
@@ -57,4 +56,4 @@ const projectSchema = new mongoose.Schema({
 
 const projectmodel= mongoose.model('project',projectSchema);
 
-module.exports.projectmodel;
+module.exports = projectmodel;
